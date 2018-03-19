@@ -18,7 +18,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.png">
 
-    <title>OClock - Sign Up</title>
+    <title>zerOClock - Sign Up</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                     <div class="header-logo">
                         <a href="index.html">
                             <img src="../assets/img/logo-white.png" alt="Logo">
-                            <span>0Clock</span>
+                            <span>zer0Clock</span>
                         </a>
                     </div><!-- /.header-logo -->
                 </div> 
@@ -56,7 +56,7 @@
         </fieldset>
         <fieldset>
             <label>Phone</label>
-            <input style="color:black" name="phone" type="tel" tabindex="1" required value="<?php echo htmlspecialchars ($phone);?>">
+            <input placeholder="+233543797123" style="color:black" name="phone" type="tel" tabindex="1" required value="<?php echo htmlspecialchars ($phone);?>">
         </fieldset>
         <fieldset>
             <label>Password</label>

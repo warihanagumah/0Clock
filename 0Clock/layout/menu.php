@@ -1,12 +1,4 @@
 
-<head>
-    <style>
-        a{
-            font-size: 50px;
-        }
-    </style>
-</head>
-
 <body>
     
     <header class="header header-transparent">
@@ -16,7 +8,7 @@
                     <div class="header-logo">
                         <a href="../index.php">
                             <img src="../assets/img/logo-white.png" alt="Logo">
-                            <span>0Clock</span>
+                            <span>zer0Clock</span>
                         </a>
                     </div><!-- /.header-logo -->
 
@@ -29,21 +21,7 @@
                                 </li>
 
                                 <li >
-                                    <a href="#">More <i class="fa fa-chevron-down"></i></a>
-
-                                    <ul class="sub-menu">
-                                        <li><a href="blog-standard-right-sidebar.html">Standard Right Sidebar</a></li>
-                                        <li><a href="blog-standard-left-sidebar.html">Standard Left Sidebar</a></li>
-                                        <li><a href="blog-boxed.html">Boxed Style</a></li>
-                                        <li><a href="blog-condensed.html">Condensed Style</a></li>
-                                        <li><a href="blog-detail.html">Detail Fullwidth</a></li>
-                                        <li><a href="blog-detail-right-sidebar.html">Detail Right Sidebar</a></li>
-                                        <li><a href="blog-detail-left-sidebar.html">Detail Left Sidebar</a></li>
-                                    </ul>
-                                </li>
-
-                                <li >
-                                    <a href="../pages/contact-1.php">Contact</a>
+                                    <a href="../pages/contact.php">Contact</a>
                                 </li>
         
                                 <li>
@@ -52,7 +30,14 @@
 
                                 <li>
                                     <a href="../pages/register.php">SignUp</a>                           
-                                </li>                                                            
+                                </li>
+
+                                <li>
+                                    <a href="../pages/events.php">Book Appointment</a>                           
+                                </li> 
+                                <li>
+                                    <a href="../pages/map.php">use Map</a>                           
+                                </li>                                                           
         
                             </ul>
 

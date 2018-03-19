@@ -1,6 +1,6 @@
 <?php
 
-Require '../database/Database.php';
+require_once '../database/Database.php';
 class UserClass{   
 
    public function __construct(){
@@ -79,7 +79,7 @@ class UserClass{
 	        if($ok){
 	        	session_start();
 	         	//storing a user details
-	            $_SESSION['company_name']=$row['company_name'];
+	           $_SESSION['company_name']=$row['company_name'];
 	         	$_SESSION['phone']=$row['phone'];
 	        	$_SESSION['location']=$row['location'];
 	        	$_SESSION['id']=$row['id'];
@@ -113,6 +113,7 @@ class UserClass{
             	session_start();
             	$_SESSION['id']=$row['id'];
             	$_SESSION['email']=$row['email'];
+              $_SESSION['company_name']=$row['company_name'];
             	return true;
             }
 	        else{

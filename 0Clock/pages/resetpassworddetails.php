@@ -18,7 +18,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.png">
 
-    <title>OClock - Reset Password Details</title>
+    <title>zerOClock - Reset Password Details</title>
 </head>
 
 <body>

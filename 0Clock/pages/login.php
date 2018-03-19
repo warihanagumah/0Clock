@@ -18,7 +18,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.png">
 
-    <title>OClock - Login</title>
+    <title>zerOClock - Login</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                 <div class="header-logo">
                     <a href="index.html">
                         <img src="../assets/img/logo-white.png" alt="Logo">
-                        <span>0Clock</span>
+                        <span>zer0Clock</span>
                     </a>
                 </div><!-- /.header-logo -->
             </div> 

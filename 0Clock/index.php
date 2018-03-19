@@ -32,9 +32,9 @@
             <div class="container">
                 <div class="header-inner">
                     <div class="header-logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="assets/img/logo-white.png" alt="Logo">
-                            <span>0Clock</span>
+                            <span>zer0Clock</span>
                         </a>
                     </div><!-- /.header-logo -->
 
@@ -57,7 +57,15 @@
 
                                 <li>
                                     <a href="pages/register.php">Sign Up</a>                           
-                                </li>                                                            
+                                </li>
+
+
+                                <li>
+                                    <a href="pages/events.php">Book Appointment</a>                           
+                                </li> 
+                                <li>
+                                    <a href="pages/map.php">Use Map</a>                           
+                                </li>                                                           
         
                             </ul>
 
@@ -81,10 +89,10 @@
             <div class="content">
                 <div class="mt-150">
                     <div class="hero-image">
-                        <div class="hero-image-inner" style="background-image: url('assets/img/tmp/time-saving.png');"> 
+                        <div class="hero-image-inner" style="background-image: url('assets/img/tmp/time-saving.png');" > 
                             <div class="hero-image-content">
                                 <div class="container">                
-                                    <a style="border-radius: 12px;" href="pages/register.php" class="btn btn-primary btn-lg">Get an account</a>
+                                    <a style="border-radius: 12px;" href="pages/events.php" class="btn btn-primary btn-lg">Book an Appointment</a>
                                 </div><!-- /.container -->
                             </div><!-- /.hero-image-content -->
                         </div><!-- /.hero-image-inner -->

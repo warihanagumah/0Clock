@@ -8,9 +8,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <h2>About 0Clock</h2>
+                    <h2>About zer0Clock</h2>
 
-                    <p>0Clock is a free online booking systems that aim primarily to eliminate long queues in hospitals, public servcies and other sectors in the country</p>
+                    <p>zer0Clock is a free online booking systems that aim primarily to eliminate long queues in hospitals, public servcies and other sectors in the country</p>
                 </div><!-- /.col-* -->
 
                 <div class="col-sm-4">

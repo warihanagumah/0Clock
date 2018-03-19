@@ -1,7 +1,7 @@
   <?php
     require_once('../model/userClass.php');
     //global  variables 
-    $companyName=$password=$email=$phone=$category=$description=$error="";
+    $companyName=$password=$email=$phone=$category=$description=$error=$message=$subject="";
     $user = new UserClass();
 
     //check if the register button is clicked 
@@ -12,7 +12,7 @@
         if($status==true){
           /*send mail to company's email*/
           $regstatus="Registration Information";
-          $message="Dear Sir or Madam, <br/><br/> Thank you for registraring with 0Clock appointment booking system. We at 0Clock will do our best to provide the highest quality services for you and your customers 24/7. <br/><br/> Please feel free to contact us for any assistance on our contact page. <br/><br/>Thank you. <br/><br/> Regards <br/> Developers of OClock";
+          $message="Dear " .$companyName . "," ."\r\n". "\r\n" ."Thank you for registraring with 0Clock appointment booking system. We at 0Clock will do our best to provide the highest quality services for you and your customers 24/7." ."\r\n" . "Please feel free to contact us for any assistance on our contact page." ."\r\n" . "\r\n" . "Thank you. " ."\r\n" . "\r\n" . "Regards " ."\r\n" ."Developers of OClock";
 
           $response=mail($email, $regstatus, $message);
           var_dump($response);
@@ -29,7 +29,7 @@
       if($check==true){
         $status=$user->UserLogin($email, $password);
         if($status==true){
-          header("Location: ../pages/bookingwebsite.php");
+          header("Location: ../pages/dashboard.php");
         }else{
           $error= "Incorrect email or password";
         }
@@ -39,10 +39,10 @@
       if($check==true){
         /*send mail to company's email*/
         $subject="Password Reset";
-        $message="Dear Sir or Madam, <br/><br/> Thank you for using 0Clock. <br/><br/> Someone has requested to change your password. Please contact developers of OClock to make a complaint incase you are unaware of this request. <br/><br/>Thank you. <br/><br/> Regards <br/> Developers of OClock";
+        $message="Dear " . $companyName . "," ."\r\n" . "\r\n" . "Thank you for using 0Clock."."\r\n" ."Someone has requested to change your password. Please contact developers of OClock to make a complaint incase you are unaware of this request."."\r\n"."\r\n" ."Thank you."."\r\n" ."\r\n" ."Regards" ."\r\n" ."Developers of OClock";
 
         $response=mail($email, $subject, $message);
-        var_dump($response);
+        //var_dump($response);
 
         $status=$user->ConfirmDetails($companyName, $email);
         if($status==true){
@@ -57,11 +57,12 @@
         session_start();
         $id = $_SESSION['id'];
         $email = $_SESSION['email'];
+        $companyName=$_SESSION['companyName'];
         $status=$user->ResetPassword($password, $id);
         if($status==true){
           /*send mail to company's email*/
           $subject="Password Reset";
-          $message="Dear Sir or Madam, <br/><br/> Your password has successfully been reset. <br/><br/>Thank you. <br/><br/> Regards <br/> Developers of OClock";
+          $message="Dear Sir or Madam," ."\r\n" ."\r\n" ."Your password has successfully been reset." ."\r\n" ."Thank you." ."\r\n" ."\r\n" ."Regards"."\r\n" ."Developers of OClock";
           $message=$message;
 
           $response=mail($email, $subject, $message);
@@ -70,6 +71,12 @@
         }else{
           $error= "Database connection failed";
         }
+      }
+    }else if(isset($_POST['contact'])){
+      $check=phpvalidatecontact(); 
+      var_dump($check);
+      if($check==true){
+        $response=mail($email, $subject, $message);
       }
     }    
   
@@ -263,6 +270,56 @@
 
       return $ok;
     }   
-              
+    
+    // Validating user input for contact us form
+        
+    function phpvalidatecontact()
+    {
+      global $name, $subject, $email, $message, $error;
+      $ok=true;
+      //validating subject
+      if(empty($_POST['subject']))
+      {
+        $ok=false;
+        $error="Subject is required";
+      }else
+      {
+        $subject=$_POST['subject'];
+        $subject= cleanInput($subject);
+      }
+
+      //validating message
+      if(empty($_POST['message']))
+      {
+        $ok=false;
+        $message="Message is required";
+      }else
+      {
+        $message=$_POST['message'];
+        $message= cleanInput($message);
+      }
+
+
+      //validating email
+      if(empty($_POST['email']))
+      {
+        $ok = false;
+        $error="Eamil is required";
+      }else
+      {
+        $email=$_POST['email'];
+        $email= cleanInput($email);
+
+        //check if email match email pattern
+        if(!preg_match('/^\w+([\.-]?\w+)*@\w+([\.-]??\w+)*(\.\w{2,3})+$/', $email)) 
+        {
+          $ok=false;
+          $error="Invalid email";
+        }
+      } 
+      return $ok;
+    }  
+
+            
 
   ?>
